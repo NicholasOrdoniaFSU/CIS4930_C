@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+{% block content %}
+<!doctype html>
+<title>ImageIt Home Page</title>
+<link rel="stylesheet" type="text/css" href="/static/style.css" />
+<h1>Welcome and Good Day!</h1>
+<form action="" method="post" name="image_upload">
+{{form.csrf_token}}
+	<p>
+		You can upload images from your local computer and apply filters, just like you see on your favorite selfie social media.
+	</p>
+	<div>
+		<!-- <input name="file_loc" type="text" />-->
+		{{form.image_loc(size=50)}}
+		<input name="submit" type="submit"/>
+	</div>
+</form>
+{% endblock %}
