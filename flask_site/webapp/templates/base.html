@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
 <title>ImageIt Home Page</title>
@@ -8,7 +7,7 @@
 <body>
 	
 	<h1>Welcome and Good Day!</h1>
-	<form action="" method="post" name="image_upload">
+	<form action="" method="POST" name="image_loc">
 		<p>
 			You can upload images from your local computer and apply filters, just like you see on your favorite selfie social media.
 		</p>
@@ -17,6 +16,20 @@
 			{{form.image_loc(size=50)}}
 			<input name="submit" type="submit"/>
 		</div>
+		<div>
+			<div>
+				<img src="{{ url_for('static', filename='leia.jpg') }}" alt="leia.jpg" width="200"/>
+				<input name="submit" type="submit"/>
+			</div>
+			<div>
+				<img src="{{ url_for('static', filename='gandolf.jpg') }}" alt="gandolf.jpg" height="200" width="200"/>
+				<input name="submit" type="submit"/>
+			</div>
+		</div>
+		<p>form: {{ form }}</p>
+		<p>form: {{ form.data.image_loc }}</p>
+		<p>info: {{ info }}</p>
+		<p>info: {{ info.data }}</p>
 	</form>
 </body>
 </html>
