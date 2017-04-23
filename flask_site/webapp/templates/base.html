@@ -15,6 +15,9 @@
 		<div>
 			<img src="{{ url_for('static', filename='{% info[1] %}') }}" alt="leia.jpg" width="200"/>
 		</div>
+		<p> 
+		Color filters:
+		</p>
 		<input type="radio" name="options" id="grey" value="grey"> Greyscale </input>
 		<input type="radio" name="options" id="red" value="red"> Red </input>
 		<input type="radio" name="options" id="green" value="green"> Green </input>
@@ -23,6 +26,16 @@
 		<input type="radio" name="options" id="pink" value="pink"> Pink </input>
 		<input type="radio" name="options" id="bt" value="bt"> BedTime </input>
 		<input type="radio" name="options" id="energy" value="energy"> Energy </input>
+		<p> 
+		Enhancement filters:
+		</p>
+		<input type="radio" name="options" id="blur" value="blur"> Blur </input>
+		<input type="radio" name="options" id="con" value="con"> Contour </input>
+		<input type="radio" name="options" id="det" value="det"> Detail </input>
+		<input type="radio" name="options" id="edge" value="edge"> Edge Enhance </input>
+		<input type="radio" name="options" id="emb" value="emb"> Emboss </input>
+		<input type="radio" name="options" id="smo" value="smo"> Smooth </input>
+		<input type="radio" name="options" id="shar" value="shar"> Sharpen </input>
 		<div>
 			<!-- <input name="file_loc" type="text" />-->
 			{{form.image_loc(size=50)}}
