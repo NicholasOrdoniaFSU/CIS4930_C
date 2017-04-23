@@ -7,59 +7,27 @@
 <body>
 	
 	<h1>Welcome and Good Day!</h1>
-	<form action="" method="POST" name="image_loc_bw">
+	<form action="" method="POST" name="image_loc">
 		<h3>Black and White</h3>
 		<p>
 			You can upload images from your local computer and apply filters, just like you see on your favorite selfie social media.
 		</p>
 		<div>
+			<img src="{{ url_for('static', filename='{% info[1] %}') }}" alt="leia.jpg" width="200"/>
+		</div>
+		<input type="radio" name="options" id="bw" value="bw"> Black and White </input>
+		<input type="radio" name="options" id="red" value="red"> Red </input>
+		<input type="radio" name="options" id="blue" value="blue"> Blue </input>
+		<div>
 			<!-- <input name="file_loc" type="text" />-->
-			{{form.image_loc_bw(size=50)}}
-			<input name="submit" type="submit"/>
+			{{form.image_loc(size=50)}}
+			<input name="submit" type="submit">
 		</div>
 		<div>
 		</div>
-		<img src="{{ url_for('static', filename='new.jpg') }}" alt="leia.jpg" width="200"/>
-		<p>form: {{ form }}</p>
-		<p>form: {{ form.data.image_loc_bw }}</p>
+		<p>form: {{ form.data.image_loc }}</p>
 		<p>info: {{ info }}</p>
-		<p>info: {{ info.data }}</p>
+		<p>info: {{ info[1] }}</p>
 	</form>
-	
-	<form action="" method="POST" name="image_loc_red">
-		<h3>RED</h3>
-		<p>
-			You can upload images from your local computer and apply filters, just like you see on your favorite selfie social media.
-		</p>
-		<div>
-			<!-- <input name="file_loc" type="text" />-->
-			{{form.image_loc_red(size=50)}}
-			<input name="submit" type="submit"/>
-		</div>
-		<img src="{{ url_for('static', filename='new.jpg') }}" alt="leia.jpg" width="200"/>
-		<p>form: {{ form }}</p>
-		<p>form: {{ form.data.image_loc_red }}</p>
-		<p>info: {{ info }}</p>
-		<p>info: {{ info.data }}</p>
-	</form>
-
-	<form action="" method="POST" name="image_loc_blue">
-		<h3>BLUE</h3>
-		<p>
-			You can upload images from your local computer and apply filters, just like you see on your favorite selfie social media.
-		</p>
-		<div>
-			<!-- <input name="file_loc" type="text" />-->
-			{{form.image_loc_blue(size=50)}}
-			<input name="submit" type="submit"/>
-		</div>
-
-		<img src="{{ url_for('static', filename='leia.jpg') }}" alt="leia.jpg" width="200"/>
-		<p>form: {{ form }}</p>
-		<p>form: {{ form.data.image_loc_blue }}</p>
-		<p>info: {{ info }}</p>
-		<p>info: {{ info.data }}</p>
-	</form>
-
 </body>
 </html>
