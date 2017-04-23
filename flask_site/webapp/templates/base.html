@@ -13,11 +13,10 @@
 			You can upload images from your local computer and apply filters, just like you see on your favorite selfie social media.
 		</p>
 		<div>
-			<img src="{{ url_for('static', filename='{% info[1] %}') }}" alt="leia.jpg" width="200"/>
+			<img src="{{ url_for('static', filename=info[-1]) }}" width="200"/>
 		</div>
-		<p> 
-		Color filters:
-		</p>
+		<input type="radio" name="options" id="original" value="original"> original</input>
+		<p>Basic filters:</p>
 		<input type="radio" name="options" id="grey" value="grey"> Greyscale </input>
 		<input type="radio" name="options" id="red" value="red"> Red </input>
 		<input type="radio" name="options" id="green" value="green"> Green </input>
@@ -26,9 +25,7 @@
 		<input type="radio" name="options" id="pink" value="pink"> Pink </input>
 		<input type="radio" name="options" id="bt" value="bt"> BedTime </input>
 		<input type="radio" name="options" id="energy" value="energy"> Energy </input>
-		<p> 
-		Enhancement filters:
-		</p>
+		<p>Enhancement filters:</p>
 		<input type="radio" name="options" id="blur" value="blur"> Blur </input>
 		<input type="radio" name="options" id="con" value="con"> Contour </input>
 		<input type="radio" name="options" id="det" value="det"> Detail </input>
@@ -43,9 +40,6 @@
 		</div>
 		<div>
 		</div>
-		<p>form: {{ form.data.image_loc }}</p>
-		<p>info: {{ info }}</p>
-		<p>info: {{ info[1] }}</p>
 	</form>
 </body>
 </html>
