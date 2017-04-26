@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<center>
+<title>ImageIt Home Page</title>
+<head>
+	<link rel="stylesheet" type="text/css" href="/static/style.css" />
+</head>
+<style>
+    body {
+        background-image: url( {{ url_for('static', filename='patterns_4.jpg')}} );
+}
+</style>
+<body>
+	
+
+	<form action="" method="POST" name="image_loc">
+        <img src="{{ url_for('static', filename='banner.jpg') }}" width="300"/>
+		<p>
+            <b>You can upload images from your local computer and apply filters, just like you see on your favorite selfie social media.</b>
+		</p>
+		<div>
+			<img src="{{ url_for('static', filename=info[-1]) }}" width="200"/>
+		</div>
+		<input type="radio" name="options" id="original" value="original"> original</input>
+		<p>Basic filters:</p>
+		<input type="radio" name="options" id="grey" value="grey"> Greyscale </input>
+		<input type="radio" name="options" id="red" value="red"> Red </input>
+		<input type="radio" name="options" id="green" value="green"> Green </input>
+		<input type="radio" name="options" id="blue" value="blue"> Blue </input>
+		<input type="radio" name="options" id="bw" value="bw"> Black and White </input>
+		<input type="radio" name="options" id="pink" value="pink"> Pink </input>
+		<input type="radio" name="options" id="bt" value="bt"> BedTime </input>
+		<input type="radio" name="options" id="energy" value="energy"> Energy </input>
+		<p>Enhancement filters:</p>
+		<input type="radio" name="options" id="blur" value="blur"> Blur </input>
+		<input type="radio" name="options" id="con" value="con"> Contour </input>
+		<input type="radio" name="options" id="det" value="det"> Detail </input>
+		<input type="radio" name="options" id="edge" value="edge"> Edge Enhance </input>
+		<input type="radio" name="options" id="emb" value="emb"> Emboss </input>
+		<input type="radio" name="options" id="smo" value="smo"> Smooth </input>
+		<input type="radio" name="options" id="shar" value="shar"> Sharpen </input>
+		<div>
+			<!-- <input name="file_loc" type="text" />-->
+			{{form.image_loc(size=50)}}
+			<input name="submit" type="submit">
+		</div>
+		<div>
+		</div>
+	</form>
+</center>
+</body>
+</html>
