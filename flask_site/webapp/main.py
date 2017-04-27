@@ -21,8 +21,9 @@ def search():
 		pixels = list(pic.getdata())
 		gr = []
 		if ("original" == request.form['options']):
-			newPic = Image.new(pic.mode, pic.size)
-			newfile = imgfile
+			pic = Image.open(form.data['image_loc'])
+			newfile = request.form['options'] + "_" + imgfile
+			pic.save("static/" + request.form['options'] + "_" + imgfile)
 			info.append(form.data)
 			info.append(newfile)
 			return render_template('base.html',title='Image It', form=form, info=info)
@@ -96,6 +97,8 @@ def search():
 	else:
 		#do original image
 		info = []
+		info.append('original') #get filter type in list
+		info.append('zuckerberg.jpg') #add the image loc to list
 		return render_template('base.html',title='Image It', form=form, info=info)
 	
 	
